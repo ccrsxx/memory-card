@@ -1,9 +1,20 @@
 import { useState, useEffect } from 'react';
+import { Header, Main, About, Footer } from './components';
+import type { DifficultyModes } from './types';
 
 export function App() {
+  const [allCards, setAllCards] = useState<string[]>([]);
+  const [currentCards, setCurrentCards] = useState([]);
+  const [difficultyMode, setDifficultyMode] = useState<DifficultyModes>('easy');
+  const [isFetching, setIsFetching] = useState(false);
+
   return (
-    <div className='App'>
-      <h1>Hello World</h1>
+    <div className='mx-4 flex min-h-screen flex-col items-center justify-center gap-10'>
+      <Header />
+      <Main>
+        <About />
+      </Main>
+      <Footer />
     </div>
   );
 }
