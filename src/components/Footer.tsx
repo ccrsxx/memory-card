@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className='mb-10 text-lg text-[rgba(255,255,255,0.8)]'>
+    <footer className='text-lg text-[rgba(255,255,255,0.8)]'>
       <p className='text-[#929da9]'>
         Made with{' '}
         <span role='img' aria-label='heart'>

@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   content: ['./src/**/*.tsx', './public/index.html'],
   theme: {
@@ -9,14 +11,14 @@ module.exports = {
       colors: {
         'accent-color': '#b2becd',
         'input-color': '#292929',
-        'gray-color': '#a6a6a6',
-        'dark-color': '#2e2e2e',
+        'dark-color': '#2a2e35',
         'main-color': '#b2becd',
-        'btn-color': '#242424',
         'bg-color': '#12181b'
       },
       animation: {
-        fade: 'fade 500ms ease-in-out'
+        fade: 'fade 1s ease-in-out',
+        'fade-up': 'fade-up 1s ease-in-out',
+        'spin-gradient': 'spin-gradient 1s linear infinite'
       },
       keyframes: {
         fade: {
@@ -25,6 +27,26 @@ module.exports = {
           },
           to: {
             opacity: 1
+          }
+        },
+        'fade-up': {
+          from: {
+            opacity: 0,
+            transform: 'translateY(20px)'
+          },
+          to: {
+            opacity: 1,
+            transform: 'translateY(0)'
+          }
+        },
+        'spin-gradient': {
+          from: {
+            transform: 'rotate(0deg)',
+            color: colors.orange['400']
+          },
+          to: {
+            transform: 'rotate(360deg)',
+            color: colors.pink['400']
           }
         }
       }
