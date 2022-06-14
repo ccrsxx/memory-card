@@ -1,0 +1,41 @@
+import {
+  emilia,
+  rem,
+  aqua,
+  asuna,
+  darkness,
+  ferris,
+  haruhi,
+  hitagi,
+  holo,
+  kaori,
+  mashiro,
+  megumin,
+  mio,
+  mitsuha,
+  ram,
+  saber,
+  shouko,
+  yukino
+} from './waifus';
+
+export const animeGirls = [
+  { name: 'Emilia', image: emilia },
+  { name: 'Rem', image: rem },
+  { name: 'Aqua', image: aqua },
+  { name: 'Asuna', image: asuna },
+  { name: 'Darkness', image: darkness },
+  { name: 'Ferris', image: ferris },
+  { name: 'Haruhi', image: haruhi },
+  { name: 'Hitagi', image: hitagi },
+  { name: 'Holo', image: holo },
+  { name: 'Kaori', image: kaori },
+  { name: 'Mashiro', image: mashiro },
+  { name: 'Megumin', image: megumin },
+  { name: 'Mio', image: mio },
+  { name: 'Mitsuha', image: mitsuha },
+  { name: 'Ram', image: ram },
+  { name: 'Saber', image: saber },
+  { name: 'Shouko', image: shouko },
+  { name: 'Yukino', image: yukino }
+].map((animeGirl) => ({ ...animeGirl, isClicked: false }));
