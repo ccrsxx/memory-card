@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/memory-card/static/css/main.e8d0600e.css",
+    "main.js": "/memory-card/static/js/main.87306961.js",
+    "static/media/aqua.png": "/memory-card/static/media/aqua.7f20a5088ff504df59c4.png",
+    "static/media/holo.png": "/memory-card/static/media/holo.bb8bfee3c61037d2b671.png",
+    "static/media/kaori.png": "/memory-card/static/media/kaori.c34a22a00702e1066350.png",
+    "static/media/asuna.png": "/memory-card/static/media/asuna.5690762b57e4a8f7e77a.png",
+    "static/media/ram.png": "/memory-card/static/media/ram.e11e375b12fb1041375d.png",
+    "static/media/hitagi.png": "/memory-card/static/media/hitagi.9a98cf3e05d0c2bd7eb0.png",
+    "static/media/darkness.png": "/memory-card/static/media/darkness.dca627f3b11ca8419ea4.png",
+    "static/media/saber.png": "/memory-card/static/media/saber.638b544a61b20953d5a3.png",
+    "static/media/megumin.png": "/memory-card/static/media/megumin.79d1c1ed386b0484a8bd.png",
+    "static/media/mitsuha.png": "/memory-card/static/media/mitsuha.bd19c1aa4dfc16d3d1b8.png",
+    "static/media/haruhi.png": "/memory-card/static/media/haruhi.609242893fdd0fa27949.png",
+    "static/media/mashiro.png": "/memory-card/static/media/mashiro.dd9c386f21ea0a4fe57d.png",
+    "static/media/rem.png": "/memory-card/static/media/rem.e9d6f48864328744b804.png",
+    "static/media/emilia.png": "/memory-card/static/media/emilia.02010cf31072968e8a48.png",
+    "static/media/shouko.png": "/memory-card/static/media/shouko.95b14448b134dd0f81a5.png",
+    "static/media/yukino.png": "/memory-card/static/media/yukino.4dc561bd775ddeac2549.png",
+    "static/media/ferris.png": "/memory-card/static/media/ferris.0f3f5010afc00507157d.png",
+    "static/media/mio.png": "/memory-card/static/media/mio.cdab30b97ee2136ce971.png",
+    "index.html": "/memory-card/index.html",
+    "main.e8d0600e.css.map": "/memory-card/static/css/main.e8d0600e.css.map",
+    "main.87306961.js.map": "/memory-card/static/js/main.87306961.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e8d0600e.css",
+    "static/js/main.87306961.js"
+  ]
+}
