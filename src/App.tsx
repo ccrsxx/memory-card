@@ -113,11 +113,7 @@ export function App() {
 
   return (
     <div className='mx-4 flex min-h-screen flex-col items-center justify-center gap-8 py-10'>
-      <Header
-        className={`${
-          currentScore && '!top-10 !text-4xl lg:!top-24 lg:!text-5xl'
-        }`}
-      />
+      <Header currentScore={currentScore} />
       <Main>
         {isError ? (
           <Complete error resetGame={resetGame} />

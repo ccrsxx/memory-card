@@ -13,7 +13,8 @@ export function Card({ name, image, handleCardClick }: CardProps) {
       onClick={handleCardClick}
     >
       <img
-        className='rounded-t-lg transition-all duration-300 group-hover:brightness-110'
+        className='rounded-t-lg transition-all duration-300 group-hover:brightness-110 
+                   group-focus-visible:brightness-110'
         src={image}
         alt={name}
       />

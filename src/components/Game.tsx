@@ -3,16 +3,16 @@ import { Card } from './Card';
 import type { ICurrentCards } from '../types';
 
 interface GameProps {
-  currentScore: number;
   maxScoreNumber: number;
+  currentScore: number;
   currentCards: ICurrentCards;
   resetGame: () => void;
   handleCardClick: (name: string) => () => void;
 }
 
 export function Game({
-  currentScore,
   maxScoreNumber,
+  currentScore,
   currentCards,
   resetGame,
   handleCardClick
