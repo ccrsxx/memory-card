@@ -8,7 +8,7 @@ import {
   Game,
   Complete
 } from './components';
-import { getRandomCards, cacheImages } from './common';
+import { getRandomCards, cacheImages, sleep } from './common';
 import { animeGirls } from './assets';
 import type {
   IAllCards,
@@ -46,6 +46,8 @@ export function App() {
         setIsError(true);
         return;
       }
+
+      await sleep(1000);
 
       setAllCards(cards);
     };
