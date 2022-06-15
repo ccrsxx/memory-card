@@ -1,3 +1,4 @@
 export * from './cacheImages';
-export * from './sleep';
+export * from './getRandomCards';
 export * from './icons';
+export * from './sleep';

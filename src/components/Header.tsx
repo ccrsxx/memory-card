@@ -1,21 +1,18 @@
 interface HeaderProps {
   className: string;
-  resetGame: () => void;
 }
 
-export function Header({ className, resetGame }: HeaderProps) {
+export function Header({ className }: HeaderProps) {
   return (
     <header
-      className={`${className} relative top-36 animate-fade-up text-6xl 
-                  transition-all duration-1000 ease-in-out`}
+      className={`${className} relative top-28 animate-fade-up text-5xl transition-all duration-1000 
+                  ease-in-out sm:top-36 sm:text-6xl `}
     >
       <h1
         className='bg-gradient-to-r from-orange-400 to-pink-400
                    bg-clip-text font-bold text-transparent'
       >
-        <button type='button' onClick={resetGame}>
-          WAIFU MEMORY CARD
-        </button>
+        WAIFU MEMORY CARD
       </h1>
     </header>
   );

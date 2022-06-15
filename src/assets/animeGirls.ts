@@ -16,7 +16,19 @@ import {
   ram,
   saber,
   shouko,
-  yukino
+  yukino,
+  marin,
+  zeroTwo,
+  chelsea,
+  chika,
+  chitanda,
+  chizuru,
+  iino,
+  kaguya,
+  mai,
+  miku,
+  nino,
+  violet
 } from './waifus';
 
 export const animeGirls = [
@@ -37,5 +49,17 @@ export const animeGirls = [
   { name: 'Ram', image: ram },
   { name: 'Saber', image: saber },
   { name: 'Shouko', image: shouko },
-  { name: 'Yukino', image: yukino }
+  { name: 'Yukino', image: yukino },
+  { name: 'Marin', image: marin },
+  { name: 'Zero Two', image: zeroTwo },
+  { name: 'Chelsea', image: chelsea },
+  { name: 'Chika', image: chika },
+  { name: 'Chitanda', image: chitanda },
+  { name: 'Chizuru', image: chizuru },
+  { name: 'Iino', image: iino },
+  { name: 'Kaguya', image: kaguya },
+  { name: 'Mai', image: mai },
+  { name: 'Miku', image: miku },
+  { name: 'Nino', image: nino },
+  { name: 'Violet', image: violet }
 ].map((animeGirl) => ({ ...animeGirl, isClicked: false }));
