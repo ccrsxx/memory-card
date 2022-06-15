@@ -2,10 +2,10 @@ import { Button } from './Button';
 import type { DifficultyModes } from '../types';
 
 interface ControlProps {
-  changeDifficultyMode: (mode: DifficultyModes) => () => void;
+  handleDifficultyMode: (mode: DifficultyModes) => () => void;
 }
 
-export function Control({ changeDifficultyMode }: ControlProps) {
+export function Control({ handleDifficultyMode }: ControlProps) {
   return (
     <>
       <div
@@ -23,9 +23,9 @@ export function Control({ changeDifficultyMode }: ControlProps) {
         </p>
       </div>
       <div className='flex w-full animate-fade justify-center gap-6'>
-        <Button label='easy' onClick={changeDifficultyMode('easy')} />
-        <Button label='medium' onClick={changeDifficultyMode('medium')} />
-        <Button label='hard' onClick={changeDifficultyMode('hard')} />
+        <Button label='easy' onClick={handleDifficultyMode('easy')} />
+        <Button label='medium' onClick={handleDifficultyMode('medium')} />
+        <Button label='hard' onClick={handleDifficultyMode('hard')} />
       </div>
     </>
   );

@@ -2,7 +2,7 @@ interface ButtonProps {
   label?: string;
   children?: React.ReactNode;
   className?: string;
-  onClick?: () => void;
+  onClick: () => void;
 }
 
 export function Button({ label, children, className, onClick }: ButtonProps) {

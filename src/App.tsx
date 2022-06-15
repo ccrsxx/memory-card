@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import {
+  Complete,
   Fetching,
   Control,
   Header,
   Footer,
   Main,
-  Game,
-  Complete
+  Game
 } from './components';
 import { getRandomCards, cacheImages, sleep } from './common';
 import { animeGirls } from './assets';
@@ -68,7 +68,7 @@ export function App() {
     setIsFetching(false);
   }, [allCards]);
 
-  const changeDifficultyMode = (mode: DifficultyModes) => () => {
+  const handleDifficultyMode = (mode: DifficultyModes) => () => {
     const [maxCards, maxScore]: [MaxCardsNumber, MaxScoreNumber] =
       mode === 'easy' ? [3, 10] : mode === 'medium' ? [4, 20] : [5, 30];
 
@@ -136,7 +136,7 @@ export function App() {
         ) : isFetching ? (
           <Fetching />
         ) : (
-          <Control changeDifficultyMode={changeDifficultyMode} />
+          <Control handleDifficultyMode={handleDifficultyMode} />
         )}
       </Main>
       <Footer />
