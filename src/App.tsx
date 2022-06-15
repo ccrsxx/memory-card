@@ -8,7 +8,7 @@ import {
   Game,
   Complete
 } from './components';
-import { getRandomCards, cacheImages, sleep } from './common';
+import { getRandomCards, cacheImages } from './common';
 import { animeGirls } from './assets';
 import type {
   IAllCards,
