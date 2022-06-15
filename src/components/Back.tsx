@@ -7,7 +7,7 @@ interface BackProps {
 export function Back({ resetGame }: BackProps) {
   return (
     <Button
-      className='max-w-max animate-fade-up'
+      className='!max-w-max animate-fade-up'
       label='Back to menu'
       onClick={resetGame}
     />
