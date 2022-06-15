@@ -1,10 +1,9 @@
 {
   "files": {
-    "main.css": "/memory-card/static/css/main.e8d0600e.css",
-    "main.js": "/memory-card/static/js/main.87306961.js",
+    "main.css": "/memory-card/static/css/main.45d358c1.css",
+    "main.js": "/memory-card/static/js/main.56d21c73.js",
     "static/media/aqua.png": "/memory-card/static/media/aqua.7f20a5088ff504df59c4.png",
     "static/media/holo.png": "/memory-card/static/media/holo.bb8bfee3c61037d2b671.png",
-    "static/media/kaori.png": "/memory-card/static/media/kaori.c34a22a00702e1066350.png",
     "static/media/asuna.png": "/memory-card/static/media/asuna.5690762b57e4a8f7e77a.png",
     "static/media/ram.png": "/memory-card/static/media/ram.e11e375b12fb1041375d.png",
     "static/media/hitagi.png": "/memory-card/static/media/hitagi.9a98cf3e05d0c2bd7eb0.png",
@@ -14,18 +13,31 @@
     "static/media/mitsuha.png": "/memory-card/static/media/mitsuha.bd19c1aa4dfc16d3d1b8.png",
     "static/media/haruhi.png": "/memory-card/static/media/haruhi.609242893fdd0fa27949.png",
     "static/media/mashiro.png": "/memory-card/static/media/mashiro.dd9c386f21ea0a4fe57d.png",
+    "static/media/chika.png": "/memory-card/static/media/chika.6ad519adf30b87099942.png",
     "static/media/rem.png": "/memory-card/static/media/rem.e9d6f48864328744b804.png",
+    "static/media/chitanda.png": "/memory-card/static/media/chitanda.c76b78d483611c3b01dc.png",
     "static/media/emilia.png": "/memory-card/static/media/emilia.02010cf31072968e8a48.png",
     "static/media/shouko.png": "/memory-card/static/media/shouko.95b14448b134dd0f81a5.png",
+    "static/media/violet.png": "/memory-card/static/media/violet.497a412b01db4a739a22.png",
+    "static/media/kaori.png": "/memory-card/static/media/kaori.19b853630ac084c8d5fb.png",
     "static/media/yukino.png": "/memory-card/static/media/yukino.4dc561bd775ddeac2549.png",
+    "static/media/kaguya.png": "/memory-card/static/media/kaguya.ce03bde33535a1113cf5.png",
     "static/media/ferris.png": "/memory-card/static/media/ferris.0f3f5010afc00507157d.png",
+    "static/media/marin.png": "/memory-card/static/media/marin.0eede128a6c5faa52907.png",
     "static/media/mio.png": "/memory-card/static/media/mio.cdab30b97ee2136ce971.png",
+    "static/media/zeroTwo.png": "/memory-card/static/media/zeroTwo.1f9608ece3e32bbe1fdc.png",
+    "static/media/mai.png": "/memory-card/static/media/mai.758515ce88309e9c71e9.png",
+    "static/media/nino.png": "/memory-card/static/media/nino.e6709182bcd00ee770a8.png",
+    "static/media/chizuru.png": "/memory-card/static/media/chizuru.3e36eb03538365766977.png",
+    "static/media/miku.png": "/memory-card/static/media/miku.7fd48b2914fe2fd2a476.png",
+    "static/media/iino.png": "/memory-card/static/media/iino.5247c92f794111068c72.png",
+    "static/media/chelsea.png": "/memory-card/static/media/chelsea.9e033596b44916ddd97d.png",
     "index.html": "/memory-card/index.html",
-    "main.e8d0600e.css.map": "/memory-card/static/css/main.e8d0600e.css.map",
-    "main.87306961.js.map": "/memory-card/static/js/main.87306961.js.map"
+    "main.45d358c1.css.map": "/memory-card/static/css/main.45d358c1.css.map",
+    "main.56d21c73.js.map": "/memory-card/static/js/main.56d21c73.js.map"
   },
   "entrypoints": [
-    "static/css/main.e8d0600e.css",
-    "static/js/main.87306961.js"
+    "static/css/main.45d358c1.css",
+    "static/js/main.56d21c73.js"
   ]
 }
