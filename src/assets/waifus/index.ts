@@ -16,6 +16,18 @@ import kaori from './kaori.png';
 import mashiro from './mashiro.png';
 import mitsuha from './mitsuha.png';
 import shouko from './shouko.png';
+import marin from './marin.png';
+import zeroTwo from './zeroTwo.png';
+import violet from './violet.png';
+import nino from './nino.png';
+import miku from './miku.png';
+import mai from './mai.png';
+import kaguya from './kaguya.png';
+import iino from './iino.png';
+import chizuru from './chizuru.png';
+import chitanda from './chitanda.png';
+import chika from './chika.png';
+import chelsea from './chelsea.png';
 
 export {
   emilia,
@@ -35,5 +47,17 @@ export {
   kaori,
   mashiro,
   mitsuha,
-  shouko
+  shouko,
+  marin,
+  zeroTwo,
+  violet,
+  nino,
+  miku,
+  mai,
+  kaguya,
+  iino,
+  chizuru,
+  chitanda,
+  chika,
+  chelsea
 };

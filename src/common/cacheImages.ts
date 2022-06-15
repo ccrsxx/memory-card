@@ -1,7 +1,13 @@
+import { getRandomCards } from './getRandomCards';
 import type { ICard, IAllCards } from '../types';
 
-export async function cacheImages(cards: ICard[]): Promise<IAllCards> {
-  const promises = cards.map(
+export async function cacheImages(
+  cards: ICard[],
+  maxCards: number
+): Promise<IAllCards> {
+  const newCards = getRandomCards(cards, maxCards);
+
+  const promises = newCards.map(
     (card) =>
       new Promise((resolve, reject) => {
         const img = new Image();

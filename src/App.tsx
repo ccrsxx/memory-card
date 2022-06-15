@@ -4,15 +4,13 @@ import {
   Control,
   Header,
   Footer,
-  Winner,
-  Loser,
   Main,
-  Game
+  Game,
+  Complete
 } from './components';
+import { getRandomCards, cacheImages } from './common';
 import { animeGirls } from './assets';
-import { cacheImages, sleep } from './common';
 import type {
-  ICard,
   IAllCards,
   ICurrentCards,
   MaxCardsNumber,
@@ -22,69 +20,59 @@ import type {
 
 export function App() {
   const [allCards, setAllCards] = useState<IAllCards>(null);
+  const [currentCards, setCurrentCards] = useState<ICurrentCards>(null);
   const [currentScore, setCurrentScore] = useState<null | number>(null);
   const [maxScoreNumber, setMaxScoreNumber] = useState<MaxScoreNumber>(null);
-  const [currentCards, setCurrentCards] = useState<ICurrentCards>(null);
   const [maxCardsNumber, setMaxCardsNumber] = useState<MaxCardsNumber>(null);
   const [isFetching, setIsFetching] = useState(false);
+  const [isError, setIsError] = useState(false);
   const [isGameOver, setIsGameOver] = useState(false);
   const [isWin, setIsWin] = useState(false);
-  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    if (allCards === null) return;
+    if (!maxScoreNumber) return;
 
-    const cards: ICard[] = [];
+    const fetchCards = async () => {
+      let cards: IAllCards;
 
-    while (cards.length < maxCardsNumber!) {
-      const randomIndex = Math.floor(Math.random() * allCards.length);
-      const randomCard = allCards[randomIndex];
+      setIsFetching(true);
 
-      const isAllClicked =
-        cards.length === maxCardsNumber! - 1
-          ? [...cards, randomCard].every(({ isClicked }) => isClicked)
-          : false;
+      try {
+        cards = await cacheImages(animeGirls, maxScoreNumber!);
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log(error);
+        setIsFetching(false);
+        setIsError(true);
+        return;
+      }
 
-      if (!cards.includes(randomCard) && !isAllClicked) cards.push(randomCard);
-    }
+      setAllCards(cards);
+    };
 
-    setCurrentCards(cards as ICurrentCards);
+    fetchCards();
+  }, [maxScoreNumber]);
+
+  useEffect(() => {
+    if (isGameOver || !allCards) return;
+
+    const cards = getRandomCards(
+      allCards,
+      maxCardsNumber!,
+      true
+    ) as ICurrentCards;
+
+    setCurrentCards(cards);
     setIsFetching(false);
-  }, [allCards, isFetching]);
+  }, [allCards]);
 
-  const fetchCards = async () => {
-    let cards: IAllCards;
-
-    setIsFetching(true);
-
-    try {
-      cards = await cacheImages(animeGirls);
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error);
-      setIsFetching(false);
-      setIsError(true);
-      return;
-    }
-
-    await sleep(1000);
-
-    setAllCards(cards);
-  };
-
-  const setGame = (mode: DifficultyModes) => {
+  const changeDifficultyMode = (mode: DifficultyModes) => () => {
     const [maxCards, maxScore]: [MaxCardsNumber, MaxScoreNumber] =
       mode === 'easy' ? [3, 10] : mode === 'medium' ? [4, 20] : [5, 30];
 
-    setMaxCardsNumber(maxCards);
-
     setCurrentScore(1);
     setMaxScoreNumber(maxScore);
-  };
-
-  const changeDifficultyMode = (mode: DifficultyModes) => () => {
-    setGame(mode);
-    fetchCards();
+    setMaxCardsNumber(maxCards);
   };
 
   const handleCardClick = (name: string) => () => {
@@ -97,8 +85,8 @@ export function App() {
     }
 
     setCurrentScore((prevCurrentScore) => prevCurrentScore! + 1);
-    setAllCards((prevAllXCards) => {
-      const newCards = [...prevAllXCards!];
+    setAllCards((prevAllCards) => {
+      const newCards = [...prevAllCards!];
       newCards[cardIndex].isClicked = true;
       return newCards;
     });
@@ -111,31 +99,36 @@ export function App() {
 
   const resetGame = () => {
     setAllCards(null);
+    setCurrentCards(null);
     setCurrentScore(null);
     setMaxScoreNumber(null);
-    setCurrentCards(null);
     setMaxCardsNumber(null);
+    setIsFetching(false);
+    setIsError(false);
     setIsGameOver(false);
     setIsWin(false);
-    setIsError(false);
   };
 
   return (
     <div className='mx-4 flex min-h-screen flex-col items-center justify-center gap-8 py-10'>
       <Header
-        className={`${currentScore && '!top-24 text-5xl'}`}
-        resetGame={resetGame}
+        className={`${
+          currentScore && '!top-10 !text-4xl lg:!top-24 lg:!text-5xl'
+        }`}
       />
-      <Main className={`${1}`}>
-        {isWin ? (
-          <Winner />
+      <Main>
+        {isError ? (
+          <Complete error resetGame={resetGame} />
+        ) : isWin ? (
+          <Complete won resetGame={resetGame} />
         ) : isGameOver && !isWin ? (
-          <Loser />
+          <Complete lost resetGame={resetGame} />
         ) : currentCards ? (
           <Game
             currentScore={currentScore!}
             maxScoreNumber={maxScoreNumber!}
             currentCards={currentCards}
+            resetGame={resetGame}
             handleCardClick={handleCardClick}
           />
         ) : isFetching ? (

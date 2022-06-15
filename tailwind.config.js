@@ -9,15 +9,16 @@ module.exports = {
         roboto: ['Roboto', 'sans-serif']
       },
       colors: {
-        'accent-color': '#b2becd',
-        'input-color': '#292929',
+        'bg-color': '#12181b',
         'dark-color': '#2a2e35',
         'main-color': '#b2becd',
-        'bg-color': '#12181b'
+        'footer-color': '#929da9'
       },
       animation: {
         fade: 'fade 1s ease-in-out',
+        'fade-fast': 'fade 500ms ease-in-out',
         'fade-up': 'fade-up 1s ease-in-out',
+        'fade-up-fast': 'fade-up 500ms ease-in-out',
         'spin-gradient': 'spin-gradient 1s linear infinite'
       },
       keyframes: {
