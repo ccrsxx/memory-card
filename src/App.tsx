@@ -123,8 +123,8 @@ export function App() {
           <Complete lost resetGame={resetGame} />
         ) : currentCards ? (
           <Game
-            currentScore={currentScore!}
             maxScoreNumber={maxScoreNumber!}
+            currentScore={currentScore!}
             currentCards={currentCards}
             resetGame={resetGame}
             handleCardClick={handleCardClick}

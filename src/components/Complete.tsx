@@ -1,14 +1,14 @@
 import { Back } from './Back';
 import { GiPartyPopper, FaSkull, VscError } from '../common';
 
-interface GameOverProps {
+interface CompleteProps {
   won?: boolean;
   lost?: boolean;
   error?: boolean;
   resetGame: () => void;
 }
 
-export function Complete({ won, lost, error, resetGame }: GameOverProps) {
+export function Complete({ won, lost, error, resetGame }: CompleteProps) {
   return (
     <div className='flex flex-col items-center gap-8'>
       <div
