@@ -11,26 +11,26 @@ import {
 import { getRandomCards, cacheImages, sleep } from './common';
 import { animeGirls } from './assets';
 import type {
-  IAllCards,
+  DifficultyModes,
   ICurrentCards,
-  MaxCardsNumber,
-  MaxScoreNumber,
-  DifficultyModes
+  IAllCards,
+  MaxCards,
+  MaxScore
 } from './types';
 
 export function App() {
-  const [allCards, setAllCards] = useState<IAllCards>(null);
-  const [currentCards, setCurrentCards] = useState<ICurrentCards>(null);
+  const [allCards, setAllCards] = useState<null | IAllCards>(null);
+  const [currentCards, setCurrentCards] = useState<null | ICurrentCards>(null);
   const [currentScore, setCurrentScore] = useState<null | number>(null);
-  const [maxScoreNumber, setMaxScoreNumber] = useState<MaxScoreNumber>(null);
-  const [maxCardsNumber, setMaxCardsNumber] = useState<MaxCardsNumber>(null);
+  const [maxScore, setMaxScore] = useState<null | MaxScore>(null);
+  const [maxCards, setMaxCards] = useState<null | MaxCards>(null);
   const [isFetching, setIsFetching] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isGameOver, setIsGameOver] = useState(false);
   const [isWin, setIsWin] = useState(false);
 
   useEffect(() => {
-    if (!maxScoreNumber) return;
+    if (!maxScore) return;
 
     const fetchCards = async () => {
       let cards: IAllCards;
@@ -38,7 +38,7 @@ export function App() {
       setIsFetching(true);
 
       try {
-        cards = await cacheImages(animeGirls, maxScoreNumber!);
+        cards = await cacheImages(animeGirls, maxScore!);
       } catch (error) {
         // eslint-disable-next-line no-console
         console.log(error);
@@ -53,28 +53,24 @@ export function App() {
     };
 
     fetchCards();
-  }, [maxScoreNumber]);
+  }, [maxScore]);
 
   useEffect(() => {
     if (isGameOver || !allCards) return;
 
-    const cards = getRandomCards(
-      allCards,
-      maxCardsNumber!,
-      true
-    ) as ICurrentCards;
+    const cards = getRandomCards(allCards, maxCards!, true) as ICurrentCards;
 
     setCurrentCards(cards);
     setIsFetching(false);
   }, [allCards]);
 
   const handleDifficultyMode = (mode: DifficultyModes) => () => {
-    const [maxCards, maxScore]: [MaxCardsNumber, MaxScoreNumber] =
+    const [maxCardsNumber, maxScoreNumber]: [MaxCards, MaxScore] =
       mode === 'easy' ? [3, 10] : mode === 'medium' ? [4, 20] : [5, 30];
 
     setCurrentScore(1);
-    setMaxScoreNumber(maxScore);
-    setMaxCardsNumber(maxCards);
+    setMaxScore(maxScoreNumber);
+    setMaxCards(maxCardsNumber);
   };
 
   const handleCardClick = (name: string) => () => {
@@ -93,7 +89,7 @@ export function App() {
       return newCards;
     });
 
-    if (currentScore === maxScoreNumber!) {
+    if (currentScore === maxScore) {
       setIsGameOver(true);
       setIsWin(true);
     }
@@ -103,8 +99,8 @@ export function App() {
     setAllCards(null);
     setCurrentCards(null);
     setCurrentScore(null);
-    setMaxScoreNumber(null);
-    setMaxCardsNumber(null);
+    setMaxScore(null);
+    setMaxCards(null);
     setIsFetching(false);
     setIsError(false);
     setIsGameOver(false);
@@ -123,7 +119,7 @@ export function App() {
           <Complete lost resetGame={resetGame} />
         ) : currentCards ? (
           <Game
-            maxScoreNumber={maxScoreNumber!}
+            maxScoreNumber={maxScore!}
             currentScore={currentScore!}
             currentCards={currentCards}
             resetGame={resetGame}
